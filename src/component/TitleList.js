@@ -14,7 +14,7 @@ const TitleList = ({handleClick}) => {
         renderItem={(item, id) => (
           <List.Item onClick={() =>handleClick(id)}>
             <List.Item.Meta
-              title={<a href='google.com'>{item.value}</a>}
+              title={<p style={{ fontWeight: 'bold', color: 'blue'}}>{item.value}</p>}
               description={item.des}
             />
           </List.Item>

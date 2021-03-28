@@ -16,7 +16,7 @@ const Description = ({ title, description }) => {
     <>
       <h1>Description</h1>
       {title && (
-        <Paragraph style={{ fontWeight: "bold", marginBottom: "50px"}} editable={{ onChange: setEditableTitle }}>
+        <Paragraph style={{ fontSize:"16px", fontWeight: "bold", marginBottom: "30px"}} editable={{ onChange: setEditableTitle }}>
           {editableTitle}
         </Paragraph>
       )}
