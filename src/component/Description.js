@@ -1,11 +1,33 @@
+import { Typography } from "antd";
+import { useState, useEffect } from "react";
 
-const Description = ({description}) => {
+const { Paragraph } = Typography;
+
+const Description = ({ title, description }) => {
+  const [editableDescription, setEditableDescription] = useState(description);
+  const [editableTitle, setEditableTitle] = useState(title);
+
+  useEffect(() => {
+    setEditableDescription(description);
+    setEditableTitle(title)
+  }, [description, title]);
+
   return (
     <>
-    <h1>Description</h1>
-    <p>{description}</p>
+      <h1>Description</h1>
+      {title && (
+        <Paragraph style={{ fontWeight: "bold", marginBottom: "50px"}} editable={{ onChange: setEditableTitle }}>
+          {editableTitle}
+        </Paragraph>
+      )}
+
+      {description && (
+        <Paragraph editable={{ onChange: setEditableDescription }}>
+          {editableDescription}
+        </Paragraph>
+      )}
     </>
   );
-}
+};
 
 export default Description;

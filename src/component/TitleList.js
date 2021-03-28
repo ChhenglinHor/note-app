@@ -15,7 +15,7 @@ const TitleList = ({handleClick}) => {
           <List.Item onClick={() =>handleClick(id)}>
             <List.Item.Meta
               title={<a href='google.com'>{item.value}</a>}
-              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+              description={item.des}
             />
           </List.Item>
         )}

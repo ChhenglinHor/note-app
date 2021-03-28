@@ -9,12 +9,13 @@ function App() {
   const [idState, setIdState] = useState();
 
   const list = [
-    { id: 1, value: "My Note1" },
-    { id: 2, value: "My Note2" },
-    { id: 3, value: "My Note3" },
+    { id: 0, value: "My Note1", des: "My note here is something about 1" },
+    { id: 1, value: "My Note2", des: "My note here is something about 2" },
+    { id: 2, value: "My Note3", des: "My note here is something about 3" },
   ];
 
   console.log('idState', idState);
+  console.log('value', list[idState]);
 
   return (
     <>
@@ -27,7 +28,7 @@ function App() {
             <TitleList className="titleListContainer" handleClick={(id) => setIdState(id)} />
           </div>
           <div className="flex-child">
-            <Description className="descriptionContainer" description={idState} />
+            <Description className="descriptionContainer" title={list[idState]?.value} description={list[idState]?.des} />
           </div>
         </div>
       </ListContext.Provider>
